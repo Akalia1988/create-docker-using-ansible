@@ -1,0 +1,16 @@
+---
+
+Name: "nginx install & start services"
+become: true
+hosts: all
+task: 
+  - 
+    Name: "install nginx"
+    Yum: 
+      name: nginx
+      state: latest
+  - 
+    name: "start nginx"
+    service: 
+      name: nginx
+      state: started
